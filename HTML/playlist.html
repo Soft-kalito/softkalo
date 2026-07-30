@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/estilomusic.css">
+    <title>Mi Playlist Favorita</title>
+</head>
+<body>
+
+    <div class="playlist-container">
+        
+        <!-- Encabezado de la Playlist -->
+        <div class="playlist-header">
+            <p>Mi Selección Personal</p>
+            <h1>Mis Canciones Favoritas</h1>
+        </div>
+
+        <!-- Lista de mis canciones -->
+        <div class="song-list">
+
+            <!-- Canción 1 -->
+            <div class="song-item" data-src="../Multimedia/Imagine - John Lennon.mp3">
+                <div class="song-number">1</div>
+                <!-- Miniatura con emoji, puedes cambiarlo por una URL de imagen real en background-image -->
+                <div class="song-cover" style="background-image: url('../IMG/');">🎸</div>
+                <div class="song-info">
+                    <h3 class="song-title">Bohemian Rhapsody</h3>
+                    <p class="song-artist">Queen</p>
+                </div>
+                <div class="song-duration">5:55</div>
+            </div>
+
+            <!-- Canción 2 -->
+            <div class="song-item" data-src="../Multimedia/In The End - Remix Fleurie.mp3">
+                <div class="song-number">2</div>
+                <div class="song-cover" style="background-image: url('../IMG/');">🎹</div>
+                <div class="song-info">
+                    <h3 class="song-title">Billie Jean</h3>
+                    <p class="song-artist">Michael Jackson</p>
+                </div>
+                <div class="song-duration">4:54</div>
+            </div>
+
+            <!-- Canción 3 -->
+            <div class="song-item" data-src="../Multimedia/The Calling - TheFatRat.mp3">
+                <div class="song-number">3</div>
+                <div class="song-cover" style="background-image: url('../IMG/');">⚡</div>
+                <div class="song-info">
+                    <h3 class="song-title">Hotel California</h3>
+                    <p class="song-artist">Eagles</p>
+                </div>
+                <div class="song-duration">6:30</div>
+            </div>
+
+            <!-- Canción 4 -->
+            <div class="song-item" data-src="../Multimedia/Dancing With Your Ghost - Sasha Sloan.mp3">
+                <div class="song-number">4</div>
+                <div class="song-cover">🌌</div>
+                <div class="song-info">
+                    <h3 class="song-title">In the End</h3>
+                    <p class="song-artist">Linkin Park</p>
+                </div>
+                <div class="song-duration">3:36</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Reproductor de audio oculto -->
+    <audio id="music-player"></audio>
+
+    <script>
+    // 1. Obtenemos el reproductor de audio y todas las canciones de la lista
+    const player = document.getElementById('music-player');
+    const songItems = document.querySelectorAll('.song-item');
+
+    // Variable para rastrear qué canción está sonando actualmente
+    let currentPlayingItem = null;
+
+    // 2. Escuchamos el clic en cada una de las canciones
+    songItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const audioSrc = item.getAttribute('data-src');
+
+            if (!audioSrc) {
+                console.warn("Esta canción no tiene una ruta de audio definida.");
+                return;
+            }
+
+            // Si hacemos clic en la misma canción que ya está sonando, la pausamos
+            if (currentPlayingItem === item) {
+                if (player.paused) {
+                    player.play();
+                    item.style.borderColor = "var(--color-acento)"; // Resalta cuando suena
+                } else {
+                    player.pause();
+                    item.style.borderColor = "transparent"; // Quita el resalte al pausar
+                }
+            } else {
+                // Si es una canción nueva:
+                // Quitamos el borde activo a la canción anterior
+                if (currentPlayingItem) {
+                    currentPlayingItem.style.borderColor = "transparent";
+                }
+
+                // Cambiamos la fuente del reproductor y le damos Play
+                player.src = audioSrc;
+                player.play();
+                
+                // Marcamos visualmente la canción actual
+                item.style.borderColor = "var(--color-acento)";
+                currentPlayingItem = item;
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lonya Grande | Historia, Cultura y Tradición</title>
+ 
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
+            color: #121212;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- SECCIONES COMUNES --- */
+        section {
+            padding: 80px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #38bdf8;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: #e0a96d;
+            display: block;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* --- HISTORIA (GRID CON IMAGEN Y TEXTO) --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .text-box p {
+            color: #94a3b8;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .img-frame {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- TARJETAS DE CULTURA Y ATRACTIVOS --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            color: #f8fafc;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* --- PIE DE PÁGINA --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #070c1b;
+            color: #64748b;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            height: 25vh;
+            background: linear-gradient(to bottom, rgba(11, 19, 41, 0.5), #0b1329),
+                        url('IMG/banner.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10px;
+            color: #d49b4b;;
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO / BANNER -->
+    <div class="hero">
+        <h1>LONYA GRANDE</h1>
+        <p>Tierra de historia, naturaleza indómita y café de altura</p>
+    </div>
+
+    <!-- HISTORIA -->
+    <section id="historia">
+        <h4 class="section-title">Nuestra Historia</h4>
+        <div class="grid-2">
+            <div class="text-box">
+                <p>El distrito de <strong>Lonya Grande</strong>, ubicado en la provincia de Utcubamba (Región Amazonas), es una tierra privilegiada poseedora de un rico legado ancestral y arqueológico.</p>
+                <p>Desde asentamientos antiguos vinculados a las culturas prehispánicas hasta su desarrollo colonial y republicano, Lonya Grande se ha consolidado como un punto clave en el valle del Utcubamba, rodeado de impresionantes paisajes de selva alta.</p>
+            </div>
+            <div class="img-frame">
+                <!-- Tu foto local -->
+                <img src="../IMG/Gif Minions.gif" alt="Historia de Lonya Grande" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600'">
+            </div>
+        </div>
+    </section>
+
+    <!-- CULTURA Y TRADICIÓN -->
+    <section id="cultura">
+        <h2 class="section-title">Cultura & Atractivos</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-icon">🎨</span>
+                <h3>Arte Rupestre</h3>
+                <p>Misteriosas pinturas rupestres y petroglifos plasmados en farallones rocosos, testimonio vivo de los primeros pobladores de la zona.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">☕</span>
+                <h3>Café de Altura</h3>
+                <p>Reconocido por su excelente calidad aromática y sabor. El cultivo de café es pilar de la economía y la identidad lonyana.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🏔️</span>
+                <h3>Naturaleza y Cañones</h3>
+                <p>Rodeado por valles fértiles, ríos e impresionantes paisajes de montaña ideales para el turismo de aventura y ecoturismo.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🎉</span>
+                <h3>Festividades</h3>
+                <p>Celebraciones tradicionales llenas de música, danzas típicas, calor humano y la exquisita gastronomía local.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+        <p>Lonya Grande — Provincia de Utcubamba, Región Amazonas, Perú</p>
+    </footer>
+
+</body>
+</html>

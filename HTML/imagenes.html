@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/estiloimg.css">
+    
+    <title>Galería Interactiva | Amazonas</title>
+
+    <!-- Fuente Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS de Fancybox (Librería para la ventana emergente / Lightbox) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <div class="header">
+        <h1>Galería Fotográfica</h1>
+        <p>Explora las imágenes de forma interactiva. Haz clic en cualquiera para expandirla.</p>
+    </div>
+
+    <!-- Contenedor Interactivo de Imágenes -->
+    <div class="gallery-container">
+
+        <!-- Foto 1 -->
+        <a href="../IMG/feeling1.jpg" 
+        class="gallery-item" 
+        data-fancybox="galeria" 
+        data-caption="<b>Paisaje de Lonya Grande</b> — Vista panorámica desde la ruta.">
+            
+            <img src="../IMG/feeling1.jpg" alt="Foto 1">
+            
+            <div class="zoom-icon">🔍</div>
+            <div class="item-overlay">
+                <span class="item-title">Lonya Grande</span>
+                <span class="item-subtitle">Ver en alta resolución ↗</span>
+            </div>
+        </a>
+
+        <!-- Foto 2 -->
+        <a href="../IMG/feeling2.jpg" 
+        class="gallery-item" 
+        data-fancybox="galeria" 
+        data-caption="<b>Arte Rupestre</b> — Pinturas ancestrales de la región.">
+            
+            <img src="../IMG/feeling2.jpg" alt="Foto 2">
+            
+            <div class="zoom-icon">🔍</div>
+            <div class="item-overlay">
+                <span class="item-title">Pinturas Rupestres</span>
+                <span class="item-subtitle">Ver en alta resolución ↗</span>
+            </div>
+        </a>
+
+        <!-- Foto 3 -->
+        <a href="../IMG/feeling3.jpg" 
+        class="gallery-item" 
+        data-fancybox="galeria" 
+        data-caption="<b>Naturaleza y Valles</b> — Bosque de neblina en Amazonas.">
+            
+            <img src="../IMG/feeling3.jpg" alt="Foto 3">
+            
+            <div class="zoom-icon">🔍</div>
+            <div class="item-overlay">
+                <span class="item-title">Bosque de Neblina</span>
+                <span class="item-subtitle">Ver en alta resolución ↗</span>
+            </div>
+        </a>
+
+        <!-- Foto 4 -->
+        <a href="../IMG/feeling4.jpg" 
+        class="gallery-item" 
+        data-fancybox="galeria" 
+        data-caption="<b>Río y Cañón</b> — Recorrido turístico Utcubamba.">
+            
+            <img src="../IMG/feeling4.jpg" alt="Foto 4">
+            
+            <div class="zoom-icon">🔍</div>
+            <div class="item-overlay">
+                <span class="item-title">Cañón del Utcubamba</span>
+                <span class="item-subtitle">Ver en alta resolución ↗</span>
+            </div>
+        </a>
+
+    </div>
+
+<!-- Script de JS Fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        // Inicializar la Galería Interactiva con transiciones elegantes
+        Fancybox.bind("[data-fancybox]", {
+            animated: true,
+            showClass: "f-fadeIn",
+            hideClass: "f-fadeOut",
+            Toolbar: {
+                display: {
+                    left: ["infobar"],
+                    middle: [],
+                    right: ["slideshow", "fullscreen", "thumbs", "close"],
+                },
+            },
+        });
+    </script>
+</body>
+</html>
